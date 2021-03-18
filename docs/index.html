@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Statistics Reference Book</title>
+  <meta name="description" content="This is a collection of useful statistics knowledge" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Statistics Reference Book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="figures/01_cover/Cover.svg" />
+  <meta property="og:description" content="This is a collection of useful statistics knowledge" />
+  <meta name="github-repo" content="retodomax/Stat_Ref_Book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Statistics Reference Book" />
+  
+  <meta name="twitter:description" content="This is a collection of useful statistics knowledge" />
+  <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
+
+<meta name="author" content="Reto Zihlmann" />
+
+
+<meta name="date" content="2021-03-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
+
+<link rel="next" href="Math-basics.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<!––JavaScript code for Show/Hide buttons––>
+<!––see: https://web.stanford.edu/~naras/post/toggle-visibility-of-solutions-in-bookdown/––>
+<!––and see: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp––>
+
+<script>
+function myFunction(myid) {
+  var x = document.getElementById(myid);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stat Reference book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="Math-basics.html"><a href="Math-basics.html"><i class="fa fa-check"></i><b>1</b> Math Basics</a><ul>
+<li class="chapter" data-level="1.1" data-path="Math-basics.html"><a href="Math-basics.html#probability"><i class="fa fa-check"></i><b>1.1</b> Probability</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics Reference Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<p style="visibility:hidden;">% Tag useful such that part is included but already hidden even before rendering of MathJax
+\(
+\newcommand{\bm}[1]{\boldsymbol{#1}}
+% \newcommand{\bm}[1]{\boldsymbol{\mathbf{#1}}}  % Use this if you prefere upright (not italic) vectors and matrices
+
+% Operators
+\newcommand{\tr}{{}^{\intercal}}               % transpose (needs amssymb)
+\newcommand{\inv}{^{-1}}                       % inverse
+\renewcommand{\d}[1]{\ensuremath{\operatorname{d}\!{#1}}}  % dx
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}           % L2 Norm
+\DeclareMathOperator*{\argmin}{arg\, min}
+\DeclareMathOperator*{\argmax}{arg\, max}
+\DeclareMathOperator{\diag}{diag}
+
+\newcommand{\E}{\mathbf{E}}  % Depreciated: delete as soon as possible... Use \ERW{}
+
+% Matrix
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}  % big zero in matrix
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}} % vertical bar to separate matrix
+
+% SfS stuff
+\newcommand{\iid}{\mbox{ i.i.d. }}
+\newcommand{\Xsub}[2]{{#1}_{\mathrm{\scriptscriptstyle #2}}}
+\newcommand{\wh}[1]{{}\kern0.1em\widehat{\kern-0.1em#1}{}}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Cor}{Corr}
+
+\newcommand{\ekl}{[}     % Erwartungswert Klammer links
+\newcommand{\ekr}{]}     % Erwartungswert Klammer rechts
+\newcommand{\ckl}{(}     % (Co)variance Klammer links
+\newcommand{\ckr}{)}
+\newcommand{\pkl}{(}     % Probability Klammer links
+\newcommand{\pkr}{)}
+\newcommand{\vkl}{(}     % Verteilungs Klammer links
+\newcommand{\vkr}{)}
+
+\newcommand{\ERWSymbol}{\mathbf{E}}  % vorbereitet zum Anpassen an individuelle Styles
+\newcommand{\VARSymbol}{\Var}
+\newcommand{\COVSymbol}{\Cov}
+\newcommand{\CORSymbol}{\Cor}
+\DeclareMathOperator{\PRSymbol}{P}
+\newcommand{\NormalSymbol}{\mathcal{N}}
+\DeclareMathOperator{\BinomialSymbol}{\mathcal{B}} % Binomial
+\DeclareMathOperator{\BernoulliSymbol}{\mathcal{B}ernoulli} % Bernoulli
+\DeclareMathOperator{\ExponentialSymbol}{Exp}
+\DeclareMathOperator{\PoissonSymbol}{Pois}
+
+% die eigentlichen ``Funktionen''
+\newcommand{\ERW}[1] {\ERWSymbol \left[ #1 \right]}
+\newcommand{\VAR}[1] {\VARSymbol \left( #1 \right)}
+\newcommand{\VARH}[1]{\wh\VARSymbol \left( #1 \right)}
+
+\newcommand{\COV}[1] {\COVSymbol \left(#1 \right)}
+\newcommand{\COVH}[1] {\wh\COVSymbol \left( #1 \right)}
+\newcommand{\COR}[1] {\CORSymbol    \left( #1 \right)}
+\newcommand{\CORH}[1] {\wh\CORSymbol \left( #1 \right)}
+\newcommand{\PR}[1] {\PRSymbol \! \left( #1 \right)}
+\newcommand{\Normal}[1] {\NormalSymbol   \left( #1 \right)}
+\newcommand{\Binomial}[1] {\BinomialSymbol    \left( #1 \right)}
+\newcommand{\Bernoulli}[1] {\BernoulliSymbol    \left( #1 \right)}
+\newcommand{\Exponential}[1] {\ExponentialSymbol    \left( #1 \right)}
+\newcommand{\Poisson}[1] {\PoissonSymbol   \left( #1 \right)}
+
+\newcommand{\ERWi}[2]  {\Xsub{\ERWSymbol}{#1}    \left[ #2
+    \right]}
+\newcommand{\VARi}[2]  {\Xsub{\VARSymbol}{#1}    \left( #2
+    \right)}
+\newcommand{\VARHi}[2] {\Xsub{\wh\VARSymbol}{#1} \left( #2
+    \right)}
+\newcommand{\COVi}[2]  {\Xsub{\COVSymbol}{#1}    \left( #2
+    \right)}
+\newcommand{\COVHi}[2] {\Xsub{\wh\COVSymbol}{#1} \left( #2
+    \right)}
+\newcommand{\CORi}[2]  {\Xsub{\CORSymbol}{#1}    \left( #2
+    \right)}
+\newcommand{\CORHi}[2] {\Xsub{\wh\CORSymbol}{#1} \left( #2
+    \right)}
+\newcommand{\PRi}[2]   {\Xsub{\PRSymbol}{#1}     \left( #2
+    \right)}
+\newcommand{\Normali}[2]      {\Xsub{\NormalSymbol}{#1}   \left( #2
+    \right)}
+\newcommand{\Binomiali}[2]    {\Xsub{\BinomialSymbol}{#1}    \left( #2
+    \right)}
+\newcommand{\Bernoullii}[2]   {\Xsub{\BernoulliSymbol}{#1}    \left( #2
+    \right)}
+\newcommand{\Exponentiali}[2] {\Xsub{\ExponentialSymbol}{#1}    \left( #2
+    \right)}
+\newcommand{\Poissoni}[2]     {\Xsub{\PoissonSymbol}{#1}   \left( #2
+    \right)}
+
+\)
+</p>
+<div id="header">
+<h1 class="title">Statistics Reference Book</h1>
+<p class="author"><em>Reto Zihlmann</em></p>
+<p class="date"><em>2021-03-18</em></p>
+</div>
+<div id="introduction" class="section level1 unnumbered">
+<h1>Introduction</h1>
+<p><img src="figures/01_cover/Cover2.png" width="40%" style="display: block; margin: auto;" /></p>
+<hr />
+<p>This book contains a constantly growing collection of useful statistics knowledge. The book is written in <a href="https://rmarkdown.rstudio.com/">RMarkdown</a> with <a href="https://bookdown.org/">bookdown</a>.</p>
+<hr />
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+<hr />
+<p>Now math</p>
+<p><span class="math display">\[
+c^2 = \sqrt{a^2 + b^2}
+\]</span></p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="Math-basics.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 1
+},
+"edit": {
+"link": "https://github.com/retodomax/Stat_Ref_Book/edit/main/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

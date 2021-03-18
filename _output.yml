@@ -2,15 +2,17 @@ bookdown::gitbook:
   css: style.css
   config:
     toc:
+      collapse: section
       before: |
-        <li><a href="./">A Minimal Book Example</a></li>
+        <li><a href="./">Stat Reference book</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    download: ["pdf", "epub"]
-bookdown::pdf_book:
+    fontsettings:
+      theme: white
+      family: sans
+      size: 1
+    edit: https://github.com/retodomax/Stat_Ref_Book/edit/main/%s
   includes:
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
+    in_header:
+      - header.html
+    before_body: /home/reto/texmf-local/tex/latex/commonstuff/RetoMathjax.tex
