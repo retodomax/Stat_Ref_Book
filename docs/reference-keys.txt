@@ -1,2 +1,4 @@
 Math-basics
+exponent
+logarithm
 probability

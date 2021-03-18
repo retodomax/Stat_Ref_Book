@@ -88,7 +88,9 @@ function myFunction(myid) {
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="1" data-path="Math-basics.html"><a href="Math-basics.html"><i class="fa fa-check"></i><b>1</b> Math Basics</a><ul>
-<li class="chapter" data-level="1.1" data-path="Math-basics.html"><a href="Math-basics.html#probability"><i class="fa fa-check"></i><b>1.1</b> Probability</a></li>
+<li class="chapter" data-level="1.1" data-path="Math-basics.html"><a href="Math-basics.html#exponent"><i class="fa fa-check"></i><b>1.1</b> Exponent</a></li>
+<li class="chapter" data-level="1.2" data-path="Math-basics.html"><a href="Math-basics.html#logarithm"><i class="fa fa-check"></i><b>1.2</b> Logarithm</a></li>
+<li class="chapter" data-level="1.3" data-path="Math-basics.html"><a href="Math-basics.html#probability"><i class="fa fa-check"></i><b>1.3</b> Probability</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -206,8 +208,41 @@ function myFunction(myid) {
 </p>
 <div id="Math-basics" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Math Basics</h1>
+<div id="exponent" class="section level2">
+<h2><span class="header-section-number">1.1</span> Exponent</h2>
+<p>Rules</p>
+<ul>
+<li><span class="math inline">\(a^m a^n = a^{m+n}\)</span></li>
+<li><span class="math inline">\(\frac{a^m}{a^n} = a^{m-n}\)</span></li>
+<li><span class="math inline">\((a^m)^n = a^{mn}\)</span></li>
+<li><span class="math inline">\(a^n b^n = (ab)^n\)</span></li>
+<li><span class="math inline">\(\frac{a^n}{b^n} = \left(\frac{a}{b}\right)^n\)</span></li>
+</ul>
+<p>Special cases</p>
+<ul>
+<li><span class="math inline">\(a^1 = a\)</span></li>
+<li><span class="math inline">\(a^0 = 1, \quad a \neq 0\)</span></li>
+<li><span class="math inline">\(aa^n = a^{n+1}\)</span></li>
+<li><span class="math inline">\(1^n = 1\)</span></li>
+<li><span class="math inline">\(0^n = 0, \quad n &gt; 0\)</span></li>
+<li><span class="math inline">\(a^{-n} = \frac{1}{a^n}\)</span></li>
+</ul>
+</div>
+<div id="logarithm" class="section level2">
+<h2><span class="header-section-number">1.2</span> Logarithm</h2>
+<p><span class="math inline">\(y = \log_ax \quad \Leftrightarrow \quad a^y = x\)</span></p>
+<p>Rules</p>
+<ul>
+<li><span class="math inline">\(\log(uv) = \log u + \log v\)</span></li>
+<li><span class="math inline">\(\log\left(\frac{u}{v}\right) = \log u - \log v\)</span></li>
+<li><span class="math inline">\(\log\left(\frac{1}{v}\right) = -\log v\)</span></li>
+<li><span class="math inline">\(\log(u^r) = r \log u\)</span></li>
+</ul>
+<p>Change of base</p>
+<p><span class="math inline">\(\log_a x = \frac{\log_b x}{\log_b a}\)</span></p>
+</div>
 <div id="probability" class="section level2">
-<h2><span class="header-section-number">1.1</span> Probability</h2>
+<h2><span class="header-section-number">1.3</span> Probability</h2>
 <ul>
 <li><span class="math inline">\(\VAR{X} = 1\)</span></li>
 </ul>
